@@ -292,7 +292,6 @@ var flashing = Vue.extend({
           $('.p5 div span').html('500')
           $('.p6 div .fruit-spec').html('7.5kg')
           $('.p6 div .fruit-name').html('巾帼梨')
-          // fruit - spec
         } else if (tree == 'grape_Fruit') {
           $('.p3 span').html('399.99')
           $('.p5 div span').html('1000')
