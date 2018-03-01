@@ -287,18 +287,22 @@ var flashing = Vue.extend({
     add: function () {
       setTimeout(function () {
         let tree = $('.tree').val()
-        if (tree == 'durian') {
+        if (tree == 'pear-fruit') {
           $('.p3 span').html('199.99')
           $('.p5 div span').html('1000')
-          $('.p6 div span').html('巾帼梨')
-        } else if (tree == 'kirinFruit') {
+          $('.p6 div .fruit-spec').html('7.5kg')
+          $('.p6 div .fruit-name').html('巾帼梨')
+          // fruit - spec
+        } else if (tree == 'grape_Fruit') {
           $('.p3 span').html('399.99')
           $('.p5 div span').html('2000')
-          $('.p6 div span').html('金甲丹心柚')
-        } else if (tree == 'grape_Fruit') {
+          $('.p6 div .fruit-spec').html('11.25kg')
+          $('.p6 div .fruit-name').html('金甲丹心柚')
+        } else if (tree == 'pitaya-fruit') {
           $('.p3 span').html('259.99')
           $('.p5 div span').html('1500')
-          $('.p6 div span').html('仙蜜红火龙果')
+          $('.p6 div .fruit-spec').html('5kg')
+          $('.p6 div .fruit-name').html('仙蜜红火龙果')
         }
         let p1Left = $('.p1').offset().left
         let p2Left = $('.p2').offset().left
