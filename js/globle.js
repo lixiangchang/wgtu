@@ -1,0 +1,1 @@
+$(document.body).css("height",document.documentElement.clientHeight+"px")

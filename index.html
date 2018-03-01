@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>万果田园认养果树</title>
+  <script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/vue-router.min.js"></script>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <audio id="audio" src="music/valentina.mp3" autoplay="autoplay" loop="loop"></audio>
+  <input type="hidden" name="" class="tree">
+  <div id="app">
+    <router-view></router-view>
+  </div>
+  <template id="home">
+    <main class="home-main">
+      <div class="home-title animated bounceInDown">
+        <img src="img/tree-text.png" />
+      </div>
+      <div class="home-tree">
+        <img src="img/tree.png" alt="" />
+      </div>
+      <div class="home-btn animated">
+        <router-link to="renyang">
+          <img src="img/tree-zouni.png" alt="" />
+        </router-link>
+      </div>
+      <div class="logo">
+        <img src="img/logo.png" alt="" />
+        <span>果犇农业科技</span>
+      </div>
+    </main>
+  </template>
+  <template id="renyang">
+    <main class="renyang-main">
+      <div class="renyang-top animated bounceIn ">
+        <div>
+          <img src="img/renyang2.png" alt="" />
+        </div>
+      </div>
+      <div class="renyang-download">
+        <p @click="click(1)">
+          <img src="img/renyang-btn4.png" alt="" />
+        </p>
+        <p @click="click(2)">
+          <img src="img/renyang-btn5.png" alt="" />
+        </p>
+        <p @click="click(3)">
+          <img src="img/renyang-btn6.png" alt="" />
+        </p>
+      </div>
+    </main>
+  </template>
+  <template id="renyang1">
+    <main class="renyang1-main">
+      <div class="renyang1-top">
+        <p></p>
+        <div>
+          <img src="img/fabulous.png" alt="" />
+        </div>
+      </div>
+      <div class="renyang1-font"></div>
+      <div class="renyang1-download" @click="click()">
+        <img src="img/zouni.png" alt="" />
+      </div>
+    </main>
+  </template>
+  <template id="logistics1">
+    <main class="logistics1-main">
+      <div class="animated">
+        <img src="img/logistics-1.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-2.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-3.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-4.png" />
+      </div>
+    </main>
+  </template>
+  <template id="logistics2">
+    <main class="logistics2-main">
+      <div class="animated ">
+        <img src="img/logistics-5.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-6.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-7.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-8.png" />
+      </div>
+      <div class="animated">
+        <img src="img/logistics-9.png" />
+        <ul class="logistics2-pagination">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </main>
+  </template>
+  <template id="durian">
+    <main class="tree-main">
+      <div class="star">
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+        <img src="img/star.png" />
+      </div>
+      <p class="titleBig">恭喜您获得</p>
+      <div class="tree-tree">
+        <img :src="tree" alt="" />
+      </div>
+      <div class="tree-btn">
+        <router-link to="flashing">
+          <img src="img/fruit-btn.png" alt="" />
+        </router-link>
+      </div>
+    </main>
+  </template>
+  <template id="flashing">
+    <main class="flashing-main">
+      <p class="p1 disbk">我没看错吧..</p>
+      <p class="p2 disbk">等等！</p>
+      <p class="p3 disbk">你才花了
+        <span></span>元就得到...</p>
+      <div class="p5">
+        <div> 价值
+          <span></span>元的</div>
+      </div>
+      <div class="p6">
+        <div> 25棵
+          <span></span>！</div>
+      </div>
+      <div class="p7">
+        <p>&nbsp;天呐！</p>
+        <p>天呐！</p>
+      </div>
+      <div class="p8">
+        <p>怎么会有</p>
+        <p>这么划算</p>
+        <p>的事！</p>
+      </div>
+      <div class="p9">
+        <p style="color: #080A35;">想</p>
+        <p>想</p>
+      </div>
+      <div class="p9">
+        <p style="color: #353108;">玩</p>
+        <p>玩</p>
+      </div>
+      <div class="p9">
+        <p style="color: #350808;">次</p>
+        <p>次</p>
+      </div>
+      <div class="p9">
+        <p style="color: #2E0835;">真</p>
+        <p>真</p>
+      </div>
+      <div class="p9">
+        <p style="color: #350816;">的</p>
+        <p>的</p>
+      </div>
+      <div class="p9">
+        <p style="color: #350816;">么</p>
+        <p>么</p>
+      </div>
+      <div class="content">
+        <p class="text">
+          <img src="img/flash-text.png" />
+        </p>
+        <div class="btn1">
+          <router-link to="download">
+            <img src="img/flash-btn1.png" />
+          </router-link>
+        </div>
+        <div class="btn2">
+          <router-link to="download">
+            <img src="img/flash-btn2.png" />
+          </router-link>
+        </div>
+      </div>
+    </main>
+  </template>
+  <template id="download">
+    <div class="download">
+      <main class="download-main">
+        <!-- <div class="explain">
+          <div>
+            <img src="img/arrow.png" />
+          </div>
+          <div>
+            <p>1.点击右上角</p>
+            <p>2.选择
+              <img src="img/browser.png" alt="" />[在浏览器中打开]</p>
+          </div>
+          <div>
+            <img src="img/know.png" alt="" />
+          </div>
+        </div> -->
+        <div class="title">
+          <img src="img/download1-title.png" alt="" />
+        </div>
+        <div class="center">
+          <img src="img/download-iphone.png" alt="" />
+        </div>
+        <div class="download-btn">
+          <!-- <div class="download-img" @click="add()">
+            <img src="img/download.png" alt="" />
+          </div> -->
+          <div class="font40">从田间到舌尖全程追溯</div>
+          <div class="font">认养果树，畅享优质健康的放心水果</div>
+        </div>
+        <div class="logo">
+          <img src="img/logo-1.png" alt="" />
+          <span>果犇农业科技</span>
+        </div>
+      </main>
+    </div>
+  </template>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/globle.js"></script>
+  <script src="js/is-weixin.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

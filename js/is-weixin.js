@@ -1,0 +1,1 @@
+function is_weixin(){var ua=navigator.userAgent.toLowerCase();if(ua.match(/MicroMessenger/i)=="micromessenger"){return true}else{return false}}if(is_weixin()==true){$("main").css({"height":"93%","padding":"1.3rem 0"})}
