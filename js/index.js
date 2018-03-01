@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   function audioAutoPlay() {
     var audio = document.getElementById('audio')
     audio.play()
     document.addEventListener(
       'WeixinJSBridgeReady',
-      function () {
+      function() {
         audio.play()
       },
       false
@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
 var home = Vue.extend({
   template: '#home',
   methods: {
-    addClass: function () {
-      setTimeout(function () {
+    addClass: function() {
+      setTimeout(function() {
         if (is_weixin()) {
           $('.home .logo').css('margin-top', '1rem')
         }
       }, 0)
-      this.$nextTick(function () {
-        setTimeout(function () {
+      this.$nextTick(function() {
+        setTimeout(function() {
           $('.home-title')
             .removeClass('bounceInDown')
             .addClass('home-scale')
@@ -38,7 +38,7 @@ var home = Vue.extend({
 var renyang = Vue.extend({
   template: '#renyang',
   methods: {
-    click: function (index) {
+    click: function(index) {
       if (index == 1) {
         $('.tree').val('pear-fruit')
         $('.renyang-download p')
@@ -62,7 +62,7 @@ var renyang = Vue.extend({
           .addClass('renyang-transform1')
       }
       let _self = this
-      setTimeout(function () {
+      setTimeout(function() {
         _self.$router.push('/renyang1')
       }, 1000)
     }
@@ -71,17 +71,17 @@ var renyang = Vue.extend({
 var renyang1 = Vue.extend({
   template: '#renyang1',
   methods: {
-    addClass: function () {
-      setTimeout(function () {
-        $.fn.autotype1 = function (str, speed) {
+    addClass: function() {
+      setTimeout(function() {
+        $.fn.autotype1 = function(str, speed) {
           var self = this,
             defaultStr =
-            '<p>可以开始你的惊喜之旅了</p><p>过程中我会很辛苦的</p><p>你确定要开始吗？</p>',
+              '<p>可以开始你的惊喜之旅了</p><p>过程中我会很辛苦的</p><p>你确定要开始吗？</p>',
             defaultSpeed = 50,
             str = str || defaultStr,
             speed = speed || defaultSpeed,
             index = 0,
-            timer = setInterval(function () {
+            timer = setInterval(function() {
               var current = str.substr(index, 1)
               if (current == '<') {
                 index = str.indexOf('>', index) + 1
@@ -90,7 +90,7 @@ var renyang1 = Vue.extend({
               }
               self.html(
                 str.substring(0, index) +
-                (index & 1 && index != str.length ? '_' : '')
+                  (index & 1 && index != str.length ? '_' : '')
               )
               if (index >= str.length) {
                 clearInterval(timer)
@@ -98,39 +98,39 @@ var renyang1 = Vue.extend({
             }, speed)
         }
         $('.renyang1-font').autotype1()
-        setTimeout(function () {
+        setTimeout(function() {
           $('.renyang1-download').addClass('renyang1-dsbk')
         }, 1500)
       }, 0)
     },
-    click: function () {
-      $.fn.autotype = function (str, speed) {
+    click: function() {
+      $.fn.autotype = function(str, speed) {
         var self = this,
-          defaultStr = 'ok<span>!</span>';
-        (defaultSpeed = 50),
-        (str = str || defaultStr),
-        (speed = speed || defaultSpeed),
-        (index = 0),
-        (timer = setInterval(function () {
-          var current = str.substr(index, 1)
-          if (current == '<') {
-            index = str.indexOf('>', index) + 1
-          } else {
-            index++
-          }
-          self.html(
-            str.substring(0, index) +
-            (index & 1 && index != str.length ? '_' : '')
-          )
-          if (index >= str.length) {
-            clearInterval(timer)
-          }
-        }, speed))
+          defaultStr = 'ok<span>!</span>'
+        ;(defaultSpeed = 50),
+          (str = str || defaultStr),
+          (speed = speed || defaultSpeed),
+          (index = 0),
+          (timer = setInterval(function() {
+            var current = str.substr(index, 1)
+            if (current == '<') {
+              index = str.indexOf('>', index) + 1
+            } else {
+              index++
+            }
+            self.html(
+              str.substring(0, index) +
+                (index & 1 && index != str.length ? '_' : '')
+            )
+            if (index >= str.length) {
+              clearInterval(timer)
+            }
+          }, speed))
       }
       $('.renyang1-top p').autotype()
       $('.renyang1-top img').css('visibility', 'visible')
       var _self = this
-      setTimeout(function () {
+      setTimeout(function() {
         _self.$router.push('/logistics1')
       }, 1000)
     }
@@ -142,8 +142,8 @@ var renyang1 = Vue.extend({
 var logistics1 = Vue.extend({
   template: '#logistics1',
   methods: {
-    add: function () {
-      setTimeout(function () {
+    add: function() {
+      setTimeout(function() {
         if (is_weixin() == true) {
           $('.logistics1-main div')
             .eq(3)
@@ -155,26 +155,26 @@ var logistics1 = Vue.extend({
           .css('display', 'block')
           .addClass('bounceInLeft')
       }, 0)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics1-main>div')
           .eq(1)
           .css('display', 'block')
           .addClass('bounceInDown')
       }, 600)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics1-main>div')
           .eq(2)
           .css('display', 'block')
           .addClass('bounceInRight')
       }, 1200)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics1-main>div')
           .eq(3)
           .css('display', 'block')
           .addClass('bounceInUp')
       }, 1800)
       var _self = this
-      setTimeout(function () {
+      setTimeout(function() {
         _self.$router.push('/logistics2')
       }, 4000)
     }
@@ -186,9 +186,9 @@ var logistics1 = Vue.extend({
 var logistics2 = Vue.extend({
   template: '#logistics2',
   methods: {
-    add: function () {
+    add: function() {
       let _self = this
-      setTimeout(function () {
+      setTimeout(function() {
         if (is_weixin() == true) {
           $('.logistics2-main div')
             .eq(0)
@@ -220,33 +220,33 @@ var logistics2 = Vue.extend({
           .css('display', 'block')
           .addClass('bounceInDown')
       }, 600)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics2-main>div')
           .eq(1)
           .css('display', 'block')
           .addClass('bounceInLeft')
       }, 1200)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics2-main>div')
           .eq(2)
           .css('display', 'block')
           .addClass('slideInLeft')
       }, 1800)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics2-main>div')
           .eq(3)
           .css('display', 'block')
           .addClass('slideInRight')
       }, 2400)
-      setTimeout(function () {
+      setTimeout(function() {
         $('.logistics2-main>div')
           .eq(4)
           .css('display', 'block')
           .addClass('bounceInUp')
         let n = -1
         let timer = null
-        setTimeout(function () {
-          timer = setInterval(function () {
+        setTimeout(function() {
+          timer = setInterval(function() {
             n++
             if (n >= $('.logistics2-pagination>li').length) {
               clearInterval(timer)
@@ -274,7 +274,7 @@ var durian = Vue.extend({
   created() {
     let tree = $('.tree').val()
     this.tree = 'img/' + tree + '.png'
-    setTimeout(function () {
+    setTimeout(function() {
       if (is_weixin()) {
         $('.titleBig').css('padding-top', '2rem')
       }
@@ -284,23 +284,23 @@ var durian = Vue.extend({
 var flashing = Vue.extend({
   template: '#flashing',
   methods: {
-    add: function () {
-      setTimeout(function () {
+    add: function() {
+      setTimeout(function() {
         let tree = $('.tree').val()
         if (tree == 'pear-fruit') {
           $('.p3 span').html('199.99')
-          $('.p5 div span').html('1000')
+          $('.p5 div span').html('500')
           $('.p6 div .fruit-spec').html('7.5kg')
           $('.p6 div .fruit-name').html('巾帼梨')
           // fruit - spec
         } else if (tree == 'grape_Fruit') {
           $('.p3 span').html('399.99')
-          $('.p5 div span').html('2000')
+          $('.p5 div span').html('1000')
           $('.p6 div .fruit-spec').html('11.25kg')
           $('.p6 div .fruit-name').html('金甲丹心柚')
         } else if (tree == 'pitaya-fruit') {
           $('.p3 span').html('259.99')
-          $('.p5 div span').html('1500')
+          $('.p5 div span').html('750')
           $('.p6 div .fruit-spec').html('5kg')
           $('.p6 div .fruit-name').html('仙蜜红火龙果')
         }
@@ -308,7 +308,7 @@ var flashing = Vue.extend({
         let p2Left = $('.p2').offset().left
         let p3Left = $('.p3').offset().left
         let timer = null
-        timer = setInterval(function () {
+        timer = setInterval(function() {
           p1Left -= 1
           p2Left -= 1
           p3Left -= 1
@@ -327,10 +327,10 @@ var flashing = Vue.extend({
             $('.p5').css('display', 'block')
             $('.p6').css('display', 'block')
             localStorage.removeItem('tree')
-            setTimeout(function () {
+            setTimeout(function() {
               $('.p5').addClass('black')
               $('.p6').addClass('white')
-              setTimeout(function () {
+              setTimeout(function() {
                 $('.p5')
                   .removeClass('black')
                   .css('display', 'none')
@@ -347,17 +347,17 @@ var flashing = Vue.extend({
                     })
                 }
                 $('.p7').css('display', 'block')
-                setTimeout(function () {
+                setTimeout(function() {
                   $('.p7').css('display', 'none')
                   $('.p8').css('display', 'block')
-                  setTimeout(function () {
+                  setTimeout(function() {
                     $('.p8').css('display', 'none')
                     $('.p9')
                       .eq(0)
                       .css('display', 'block')
                     let n = 0
                     let timer1 = null
-                    timer1 = setInterval(function () {
+                    timer1 = setInterval(function() {
                       $('.p9')
                         .eq(n)
                         .css('display', 'none')
@@ -386,22 +386,23 @@ var flashing = Vue.extend({
 var download = Vue.extend({
   template: '#download',
   methods: {
-    add: function () {
-      setTimeout(function () {
+    add: function() {
+      setTimeout(function() {
         var u = navigator.userAgent
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
         if (isAndroid == true && is_weixin() == true) {
           $('.explain').css('display', 'block')
         } else {
-          $('.download img').tap(function () {})
+          $('.download img').tap(function() {})
         }
       }, 0)
     }
   }
 })
 var router = new VueRouter({
-  routes: [{
+  routes: [
+    {
       path: '/home',
       component: home
     },
